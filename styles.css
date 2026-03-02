@@ -1,14 +1,135 @@
-h1 {
-  color: green;
-  font-size: 60px;
+* {
+  box-sizing: border-box;
 }
 
-h2 {
-  color: blue;
-  font-size: 20px;
-}
-
-p {
-  border: 2px solid powderblue;
+/* Styles section */
+.default-style {
+  border-radius: var(--border-radius);
   padding: 30px;
+  border: 2px solid var(--border-color);
+  color: var(--default-text-color);
+  background-color: var(--textbox-background)
+}
+
+.flex-container {
+  display: flex;
+  place-items: center;
+  height: 15vh;
+  padding: 25px;
+}
+
+.scrollable-box {
+  height: 200px;
+  width: 300px;
+  border 1px solid black;
+  overflow: auto;
+}
+
+/* Grid container style */
+/*******************************************************/
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header'
+    'menu'
+    'main'
+    'facts'
+    'footer';
+  background-color: var(--global-background);
+  gap: 10px;
+}
+
+/* Header section */
+.header {
+  grid-area: header;
+  border-color: white;
+}
+
+.header > h1 {
+  height: 100px;
+  width: 60%;
+  margin-left: 10%;
+  font-size: 52px;
+  padding: 15px;
+  margin-right: auto;
+  text-align: center;
+  color: var(--default-text-color);
+  background-color: var(--textbox-background);
+  border-radius: var(--border-radius);
+}
+
+/* menu section */
+.menu {
+  grid-area: menu;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  justify-content: left;
+  gap: 20px;
+  border-color: white;
+}
+
+.menu ul {
+  background-color: var(--textbox-background);
+  border-color: var(--border-color);
+  border: 10px;
+  width: 100%;
+}
+
+.menu li {
+  background-color: var(--textbox-background);
+  color: var(--default-text-color);
+  border-color: var(--border-color);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5;
+  gap: 10px;
+}
+
+/* Main section */
+.main {
+  grid-area: main;
+  border-color: white;
+}
+
+.main > h1 {
+  height: 100px;
+  width: 50%;
+  color: black;
+  font-size: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Facts section */
+.facts {
+  grid-area: facts;
+  border-color: white;
+  width: 70%;
+}
+
+.facts > p {
+  font-size: 16px;
+}
+
+/* footer section */
+.footer {
+  grid-area: footer;
+  border-color: white;
+}
+
+.footer > p {
+  font-size: 14px;
+}
+/*******************************************************/
+/* End Grid Container */
+
+
+/* Variables */
+:root {
+  --global-background: #101210;
+  --textbox-background: #444952;
+  --default-text-color: #edf5f3;
+  --border-radius: 15px;
+  --border-color: #000000;
 }
